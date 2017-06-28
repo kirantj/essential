@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style>
+    html, body
+    {
+      height: 100%;
+	  margin:0px;
+	  padding:0px;
+	  background: #2b2b2b;
+    }
+    .trsnfm_all{
+	   position:relative;
+	   height: 100%;
+       background: #2b2b2b;
+	}
+	.trsnfm_video{
+	  position: absolute;
+      top: 100%;
+	  left: 50%;
+      margin-left: -340px;
+	  width: 600px;
+	}
+	.video_class{
+	  top: 30%;
+	  transition: top 8s;
+    -webkit-transition: top 8s;
+	}
+	.div_img{
+	  position: absolute;
+      left: 50%;
+      margin-left: -340px;
+      top: 30%;
+	  opacity:0;
+	}
+	.div_img img{
+	  width:600px;
+	}
+	.vsbl{
+	  display:initial; 
+	}
+	.div_txt{
+	  position: absolute;
+    width: 380px;
+    top: 22%;
+    left: 10%;
+	opacity:0;
+	}
+	.div_txt h1{
+      font-size: 50px;
+      font-family: sans-serif;
+      color: #c6c6c8;
+	}
+	.fst_a{
+	  font-size: 16px;
+    line-height: 1;
+    color: #fffa6e;
+	font-family: sans-serif;
+	}
+	.cnt_txt_all{
+	 position: relative;
+     width: 55%;
+     height: 700px;
+     top: 85%;
+     left: 10%;
+	 opacity:0;
+	}
+	.cnt_txt1{
+	   position:absolute;
+	   width: 600px;
+       height: 500px;
+	   background:#e0e0e0;
+	}
+	.cnt_another1{
+	  position: absolute;
+      right: 0px;
+      width: 450px;
+      height: 100%;
+      background: #ffffff;
+      top: 68px;
+	  padding: 18px;
+	}
+	.cnt_another1 h4{
+	  color: #5e5e5f;
+    font-family: sans-serif;
+    font-size: 32px;
+    line-height: 40px;
+    margin: 0px;
+	}
+	.cnt_another1 .p_txt{
+	   color: #99999b;
+      font-family: sans-serif;
+      font-size: 16px;
+      line-height: 30px;
+      margin: 8px 0px;
+	}
+	.cnt_another1 .a_link{
+	  position: absolute;
+    bottom: 0px;
+    background: #000;
+    color: #fff;
+    padding: 12px 0px 12px 0px;
+	font-family: sans-serif;
+    left: 0px;
+    width: 100%;
+	}
+	.cnt_another1 .a_link lable{
+	  margin-left:12px;
+	}
+	.cnt_hd{
+	  position: relative;
+    padding: 4px 8px;
+	border-bottom: 1px solid #ccc;
+	}
+	.cnt_hd > h4{
+	 color: #2b2b2b;
+    font-family: sans-serif;
+    font-size: 20px;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    margin: 5px 50px;
+	}
+	.cnt_hd > p{
+	  font-family: sans-serif;
+    color: #78787a;
+    font-size: 15px;
+    line-height: 1;
+    letter-spacing: 0.04em;
+	margin: 10px 80px;
+	}
+	.sub_icon{
+	  position:absolute;
+      right:0px;
+      background:#fffa6e;
+      width: 100px;
+      height: 100%;
+      top: 0px;	  
+	}
+	.cnt_hd_cnt{
+	  border-radius: 50%;
+      width: 350px;
+      height: 350px;
+      margin: 38px;
+	  overflow: hidden;
+	}
+	.cnt_hd_cnt > img{
+	  width:100%;
+	  height:100%;
+	}
+  </style>
+  <script>
+    $(document).ready(function(){
+	   // $(".trsnfm_video").addClass("video_class");
+      
+	   $(".trsnfm_video").animate({top: '30%'}, 3000);
+	   $(".trsnfm_video").animate({opacity: '0.7'}, 500, function(){
+	     $(".div_img").animate({opacity: '1'}, 1000);
+		    $(".trsnfm_video").animate({opacity: '0'});
+		    $(".div_img").animate({left: '70%'}, 1000, function(){
+			    $(".div_txt").animate({opacity: '1'}, 1000);
+				$(".cnt_txt_all").animate({opacity: '1'}, 1000);
+			});
+	   });
+	  // $(".trsnfm_video").animate({left: '70%'}, 1000);
+	   // $(".trsnfm_video").animate({opacity: '0'}, 1000, function(){
+	   //   $(".div_img").addClass("vsbl");
+	   // });
+	   
+	   
+	});
+	
+	//$(window).scroll(function() {
+    //if (  document.documentElement.clientHeight + 
+    //      $(document).scrollTop() >= document.body.offsetHeight )
+    //{ 
+        //alert("You're at the bottom of the page.");
+	//	$(".div_img img").css({"transform":"translate3d(0px, 0px, 0px) scale(0.848197, 0.848197)"});
+		//alert(3);
+   // }
+//});
+  </script>
+</head>
+<body>
+<div class="trsnfm_all">
+       <video autoplay class="trsnfm_video">
+          <source src="video/intro_phone_1500kbps.mp4" type="video/mp4">
+		  Your browser does not support the video tag.
+       </video>
+	   <div class="div_img">
+	      <img src="images/intro_last_frame_with_ui.jpg">
+	   </div>
+	   <div class="div_txt">
+	     <h1>Introducing Essential</h1>
+		 <a href="#" class="fst_a">Be the first to reserve yours</a>
+	   </div>
+	   <div class="cnt_txt_all">
+	      <div class="cnt_txt1">
+		      <div class="cnt_hd">
+			     <h4>Andy Rubin</h4>
+				 <p>— Founder and CEO</p>
+				 <div class="sub_icon"></div>
+			  </div>
+			  <div class="cnt_hd_cnt">
+			     <img src="images/Andy_Rubin.jpg">
+			  </div>
+		  </div>
+		  <div class="cnt_another1">
+		      <h4>Why I started Essential</h4>
+			  <p class="p_txt">I know people are going to ask me a lot of questions about why I started this company. Why didn’t I just travel the world, ride my motorcycle, tinker with my robots, hang out at my bakery with friends and family. And to be honest I still do ask myself that sometimes…but not too often.</p>
+			  <p class="p_txt">So why did I create Essential? Well, my hardware engineers wanted me to talk about how we are bringing real passion and craftsmanship back into this category. My software engineers wanted me to talk about our vision for making all devices, even those we don't make ourselves, play well together. My partners wanted me to talk about how we are using methods that could change how successful technology companies are built forever. </p>
+			  <p class="p_txt">But the real reason is because of what happened during a night out with an old friend of mine...</p>
+			  <a class="a_link"><lable>Read more..</lable></a>
+		  </div>
+	   </div>
+</div>
+</body>
+</html>  

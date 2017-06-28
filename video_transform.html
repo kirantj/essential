@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.lazy.min.js"></script>
+  <style>
+    html, body
+    {
+      height: 100%;
+	  margin:0px;
+	  padding:0px;
+	  background: #2b2b2b;
+    }
+    .trsnfm_all{
+	   position:relative;
+	   height: 100%;
+       background: #2b2b2b;
+	}
+	.trsnfm_video{
+	  position: absolute;
+      top: 100%;
+	  left: 50%;
+      margin-left: -340px;
+	  width: 600px;
+	}
+	.video_class{
+	  top: 30%;
+	  transition: top 8s;
+    -webkit-transition: top 8s;
+	}
+	.div_img{
+	  position: absolute;
+      right: 14.4%;
+      top: 30%;
+	  display:none;
+	}
+	.div_img img{
+	  width:600px;
+	}
+	.vsbl{
+	  display:initial; 
+	}
+	img.lazy {
+        
+        display: block;
+    }
+  </style>
+  <script>
+    $(document).ready(function(){
+	   // $(".trsnfm_video").addClass("video_class");
+  
+	   $(".trsnfm_video").animate({top: '30%'}, 3000);
+	   
+	   $(".trsnfm_video").animate({left: '70%'}, 1000);
+	    $(".trsnfm_video").animate({opacity: '0'}, 1000, function(){
+	      $(".div_img").addClass("vsbl");
+	    });
+		
+		$('.lazy').Lazy({
+        // your configuration goes here
+        scrollDirection: 'vertical',
+        effect: 'fadeIn',
+        visibleOnly: true,
+        onError: function(element) {
+            console.log('error loading ' + element.data('src'));
+        }
+    });
+		
+	});
+	
+  </script>
+</head>
+<body>
+<div class="trsnfm_all">
+       <video autoplay class="trsnfm_video">
+          <source src="video/intro_phone_1500kbps.mp4" type="video/mp4">
+		  Your browser does not support the video tag.
+       </video>
+	   <div class="div_img">
+	      <img src="images/intro_last_frame_with_ui.jpg">
+	   </div>
+	   
+	   <img class="lazy" data-src="images/intro_last_frame_with_ui.jpg" />
+</div>
+</body>
+</html>  
